@@ -10,19 +10,18 @@ import com.hedgehog.vehicles.Vehicle;
 /**
  * Created by Hedgehog on 04.07.2015.
  */
+
 public class Map {
 	
 	private static ArrayList<Road> roads = new ArrayList<Road>();
 	private static LinkedList<Vehicle> queue = new LinkedList<Vehicle>();
 	
 	public static void updateAll(float i){
-		//System.out.println("	Updating Map");
 		if(queue.size() != 0){
 			if(roads.get(0).addVehicle(queue.getFirst())){
 				queue.removeFirst();
 			}
 		}
-		System.out.println(queue);
 		for(Road r1: roads){
 			r1.updateAll(i);
 		}	
@@ -81,15 +80,12 @@ public class Map {
 			Random r = new Random();
 			queue.add(new Car(0, (6*r.nextFloat()+1), (4*r.nextFloat()+3), (2*r.nextFloat()), 0, (8*r.nextFloat()-2)));
 		}
-		System.out.println(queue);
 	}
 
 	public static void queue(int am) {
 		for(int i = 0; i < am; i++){
 			queue.add(new Car());
-		}
-		System.out.println(queue);
-		
+		}	
 	}
 	
 }

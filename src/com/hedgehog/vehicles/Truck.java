@@ -3,6 +3,7 @@ package com.hedgehog.vehicles;
 /**
  * Created by Hedgehog on 04.07.2015.
  */
+
 public class Truck extends Vehicle{
 
 	public Truck(float velocity, float acceleration, float deceleration, float reactionTime, float startingPosition){

@@ -13,7 +13,7 @@ import com.hedgehog.vehicles.Vehicle;
 
 public class Road {
 	
-	private LinkedList<Vehicle> r1; //r2;
+	private LinkedList<Vehicle> r1;
 	private float l, sL, sD;
 	private ArrayList<Road> c = new ArrayList<Road>();
 	private String name; 
@@ -29,7 +29,6 @@ public class Road {
 		e.startWriter();
 		
 		r1 = new LinkedList<Vehicle>();
-		//r2 = new LinkedList<vehicle>();
 		
 		for(Road road1 : connections){
 			c.add(road1);
@@ -46,14 +45,11 @@ public class Road {
 		e.startWriter();
 		
 		r1 = new LinkedList<Vehicle>();
-		//r2 = new LinkedList<vehicle>();
 	}
 	
 	public void updateAll(float i){
-		//System.out.println("		Updating " + name);
 		for(int j = r1.size()-1; j >=0; j--){
 			Vehicle v1 = r1.get(j);
-			//System.out.println("			Updating Vehicle " + j);
 			if(r1.getFirst() == v1){
 				handleFirst(v1, i);
 			}
@@ -82,7 +78,6 @@ public class Road {
 				int j = r.nextInt(c.size());
 				if(c.get(j).addVehicle(v)){
 					v.setPosition(0);
-					System.out.println("A vehicle went from " + this.toString() + " to " + c.get(j).toString());
 					r1.remove(v);
 					e.addPre();
 				}
@@ -90,7 +85,6 @@ public class Road {
 			else{
 				r1.remove(v);
 				e.addPre();
-				System.out.println(v.toString() + " has bes removed from " + this.toString());
 			}
 		}
 		else v.updateVelocity(i);
@@ -98,11 +92,9 @@ public class Road {
 	
 	public boolean addVehicle(Vehicle v){
 		if(noSpace(v)){
-			System.out.println("	Not Enough Space");
 			return false;
 		}
 		r1.add(v);
-		System.out.println("	Adding " + v.toString() + " to " +this.toString());
 		return true;
 	}
 	

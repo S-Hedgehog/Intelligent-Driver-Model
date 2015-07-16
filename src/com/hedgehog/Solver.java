@@ -6,6 +6,7 @@ import com.hedgehog.vehicles.Vehicle;
 /**
  * Created by Hedgehog on 04.07.2015.
  */
+
 public class Solver {
 
     public static float derivative(Vehicle vC, Vehicle vNext) {

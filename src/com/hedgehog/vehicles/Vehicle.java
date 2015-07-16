@@ -5,6 +5,7 @@ import com.hedgehog.Solver;
 /**
  * Created by Hedgehog on 04.07.2015.
  */
+
 public abstract class Vehicle {
     private float v, a, b, T, p, length, sP;
 

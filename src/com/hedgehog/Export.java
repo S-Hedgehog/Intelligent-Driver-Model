@@ -4,6 +4,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Created by Hedgehog on 04.07.2015.
+ */
+
 public class Export {
 
 	private BufferedWriter writer = null;
